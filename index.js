@@ -7,11 +7,14 @@ const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakf
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
 function createMenuItem(name, cost, category){
-    /* Code here */
+  return {name, cost, category}
 }
 
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
 
+console.log(createMenuItem('Tacos', 8, 'Lunch'));
+console.log(createMenuItem('Poke Bowl', 12, 'Lunch'));
+console.log(createMenuItem('Boba Tea', 5, 'Drinks'));
 
 
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
@@ -23,6 +26,9 @@ Your method should accept:
 and should return a number. 
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
+
+// const burger = {name: "Burger", price: 18, category: "Lunch"}
+
 
 
 
@@ -40,11 +46,23 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
 
 /* Task 4: Console.log just Julius' feedback */
 
+console.log(reviews[5]);
 
 /* Task 5: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 
+function addReview(array, name, rating, feedback){
+  array.push({name, rating, feedback});
+  return array;
+}
+console.log(addReview(reviews, 'Jonathan', '3.5', 'It was ok. I have had better, and I have certainly had worse.'));
 
-/* Task 6: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
+/* Task 6: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"*/
+
+function addFeedback(array, index, feedback){
+  array[index].feedback = feedback;
+  return array; 
+}
+console.log(addFeedback(reviews, 7, 'this place is chill with really cool people, great for getting work done on weekdays'));
 
 /*  Task 7: Write a function to return a review based on the index of the review in the array.
 
